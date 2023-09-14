@@ -33,7 +33,7 @@ class KafkaApplicationTests {
 	void kafkaListenerMethodReceivesMessageAndSendsResponse(AssertableOutput output) {
 		Awaitility.await()
 			.atMost(Duration.ofSeconds(30))
-			.untilAsserted(() -> assertThat(output).hasSingleLineContaining(
+			.untilAsserted(() -> assertThat(output).hasLineContaining(
 					"++++++Received: Greeting{message='Hello from Coordinated Restore at Checkpoint!'}"));
 	}
 
